@@ -3,6 +3,7 @@ Raspberry Pi Safe Reboot and Shutdown Button
 
 [![Raspberry Pi Safe Reboot and Shutdown Button Demo](https://cdn.sparkfun.com//assets/learn_tutorials/1/1/7/1/Pi_Shutdown_Button.gif)](https://learn.sparkfun.com/tutorials/raspberry-pi-safe-reboot-and-shutdown-button)
 
+Safely reboot or shutdown your Raspberry Pi to avoid corrupting the microSD card using the built-in general purpose button on the Qwiic pHAT v2.0!
 
 Repository Contents
 -------------------
