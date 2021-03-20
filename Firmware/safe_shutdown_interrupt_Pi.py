@@ -85,16 +85,20 @@ def shut_down():
 
 
 
-    
-# wait for a button press with switch debounce on the falling edge so that this script
-# is not taking up too many resources in order to shutdown the Pi safely
-channel = GPIO.wait_for_edge(shutdown_pin, GPIO.FALLING, bouncetime=200)
 
-if channel is None:
-    print('Timeout occurred')
-else:
-    print('Edge detected on channel', channel)
-    
-    # For troubleshooting, uncomment this line to output button status on command line
-    #print('GPIO state is = ', GPIO.input(shutdown_pin))
-    shut_down()
+while True:
+    #short delay, otherwise this code will take up a lot of the Pi's processing power
+    time.sleep(0.5)
+
+    # wait for a button press with switch debounce on the falling edge so that this script
+    # is not taking up too many resources in order to shutdown the Pi safely
+    channel = GPIO.wait_for_edge(shutdown_pin, GPIO.FALLING, bouncetime=200)
+
+    if channel is None:
+        print('Timeout occurred')
+    else:
+        print('Edge detected on channel', channel)
+
+        # For troubleshooting, uncomment this line to output button status on command line
+        #print('GPIO state is = ', GPIO.input(shutdown_pin))
+        shut_down()
